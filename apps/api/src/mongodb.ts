@@ -9,7 +9,7 @@ export async function getDatabase(): Promise<Db> {
   const { uri, database } = getDatabaseConfig();
   if (!connection) {
     const candidate = new MongoClient(uri, {
-      appName: 'giba-quadra-api',
+      appName: 'giba-tenis-api',
       maxPoolSize: 5,
       minPoolSize: 0,
       maxIdleTimeMS: 60_000,

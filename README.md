@@ -49,7 +49,7 @@ No primeiro terminal:
 npm run dev:api
 ```
 
-Verifique `http://localhost:3000/api/health`. A resposta precisa ter `service: "giba-quadra-api"` e `status: "ok"`. Esse endpoint confirma somente a API, sem consultar o banco.
+Verifique `http://localhost:3000/api/health`. A resposta precisa ter `service: "giba-tenis-api"` e `status: "ok"`. Esse endpoint confirma somente a API, sem consultar o banco.
 
 Para o diagnóstico autenticado do MongoDB, gere um token no computador:
 
@@ -82,7 +82,7 @@ Abra pelo QR code no Expo Go. A tela inicial tem o link **Verificar conexão com
 Após mudar `.env`, encerre e reinicie o Expo. Se necessário:
 
 ```powershell
-npm run start --workspace @giba-quadra/mobile -- --clear
+npm run start --workspace @giba-tenis/mobile -- --clear
 ```
 
 Nenhum segredo pode usar o prefixo `EXPO_PUBLIC_`: esses valores entram no bundle do celular. O app recebe somente a URL pública da API.

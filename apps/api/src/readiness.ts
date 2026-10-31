@@ -1,5 +1,5 @@
 import { timingSafeEqual } from 'node:crypto';
-import type { ReadinessResponse } from '@giba-quadra/contracts';
+import type { ReadinessResponse } from '@giba-tenis/contracts';
 import { jsonResponse, requireGet } from './http.ts';
 
 type Dependencies = {

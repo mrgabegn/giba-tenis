@@ -1,4 +1,4 @@
-import { isHealthResponse, type HealthResponse } from '@giba-quadra/contracts';
+import { isHealthResponse, type HealthResponse } from '@giba-tenis/contracts';
 
 export function getApiUrl(): string {
   const raw = process.env.EXPO_PUBLIC_API_URL?.trim();

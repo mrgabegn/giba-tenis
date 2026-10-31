@@ -1,5 +1,5 @@
 {
-  "name": "giba-quadra",
+  "name": "giba-tenis",
   "version": "0.1.0",
   "private": true,
   "workspaces": [
@@ -12,16 +12,16 @@
   },
   "packageManager": "npm@11.9.0",
   "scripts": {
-    "dev:mobile": "npm run start --workspace @giba-quadra/mobile",
-    "dev:api": "npm run dev --workspace @giba-quadra/api",
+    "dev:mobile": "npm run start --workspace @giba-tenis/mobile",
+    "dev:api": "npm run dev --workspace @giba-tenis/api",
     "typecheck": "npm run typecheck --workspaces --if-present",
-    "test": "npm run test --workspace @giba-quadra/api",
+    "test": "npm run test --workspace @giba-tenis/api",
     "check": "npm run typecheck && npm test && npm run format:check",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "db:check": "npm run db:check --workspace @giba-quadra/api",
-    "export:android": "npm run export:android --workspace @giba-quadra/mobile",
-    "export:ios": "npm run export:ios --workspace @giba-quadra/mobile"
+    "db:check": "npm run db:check --workspace @giba-tenis/api",
+    "export:android": "npm run export:android --workspace @giba-tenis/mobile",
+    "export:ios": "npm run export:ios --workspace @giba-tenis/mobile"
   },
   "devDependencies": {
     "@types/node": "^24.0.0",

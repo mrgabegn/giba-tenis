@@ -1,5 +1,5 @@
 {
-  "name": "@giba-quadra/api",
+  "name": "@giba-tenis/api",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -13,7 +13,7 @@
     "db:check": "node --env-file-if-exists=.env --import tsx scripts/check-database.ts"
   },
   "dependencies": {
-    "@giba-quadra/contracts": "0.1.0",
+    "@giba-tenis/contracts": "0.1.0",
     "mongodb": "^7.0.0"
   }
 }

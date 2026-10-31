@@ -1,6 +1,6 @@
 export type HealthResponse = {
   status: 'ok';
-  service: 'giba-quadra-api';
+  service: 'giba-tenis-api';
   apiVersion: 1;
   timestamp: string;
 };
@@ -15,7 +15,7 @@ export function isHealthResponse(value: unknown): value is HealthResponse {
   const candidate = value as Record<string, unknown>;
   return (
     candidate.status === 'ok' &&
-    candidate.service === 'giba-quadra-api' &&
+    candidate.service === 'giba-tenis-api' &&
     candidate.apiVersion === 1 &&
     typeof candidate.timestamp === 'string' &&
     Number.isFinite(Date.parse(candidate.timestamp))

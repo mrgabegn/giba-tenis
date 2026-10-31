@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { MongoClient } from 'mongodb';
-import { isHealthResponse } from '@giba-quadra/contracts';
+import { isHealthResponse } from '@giba-tenis/contracts';
 import health from '../api/health.ts';
 import { ConfigurationError, getDatabaseConfig } from '../src/config.ts';
 import { createReadinessHandler } from '../src/readiness.ts';
@@ -128,7 +128,7 @@ test('contrato recusa resposta parcial, formato de outro serviço e timestamp in
     { status: 'ok' },
     {
       status: 'ok',
-      service: 'giba-quadra-api',
+      service: 'giba-tenis-api',
       apiVersion: 1,
       timestamp: 'invalid',
     },
