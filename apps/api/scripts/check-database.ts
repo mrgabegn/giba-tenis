@@ -13,6 +13,23 @@ try {
   if (!document) throw new Error('Probe não encontrado.');
   console.info('MongoDB: conexão, escrita e leitura concluídas.');
 } catch (error) {
+  const details = error as {
+    name?: string;
+    code?: number | string;
+    syscall?: string;
+    hostname?: string;
+    address?: string;
+    port?: number;
+  };
+
+  console.error('Diagnóstico MongoDB:', {
+    node: process.version,
+    tipo: details?.name,
+    codigo: details?.code,
+    operacao: details?.syscall,
+    destino: details?.hostname ?? details?.address,
+    porta: details?.port,
+  });
   console.error(
     error instanceof ConfigurationError
       ? 'Configure MONGODB_URI e MONGODB_DATABASE em apps/api/.env.'
