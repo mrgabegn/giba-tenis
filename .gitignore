@@ -1,0 +1,16 @@
+node_modules/
+.expo/
+.vercel/
+dist/
+coverage/
+.env
+.env.*
+!.env.example
+*.tsbuildinfo
+npm-debug.log*
+*.jks
+*.keystore
+*.p8
+*.p12
+*.mobileprovision
+.DS_Store

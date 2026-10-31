@@ -1,0 +1,39 @@
+name: Validação técnica
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    services:
+      mongodb:
+        image: mongo:8.0
+        ports:
+          - 27017:27017
+        options: >-
+          --health-cmd "mongosh --quiet --eval 'quit(db.runCommand({ping:1}).ok ? 0 : 1)'"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    env:
+      CI: '1'
+      EXPO_NO_TELEMETRY: '1'
+      MONGODB_URI: mongodb://127.0.0.1:27017
+      MONGODB_DATABASE: giba_quadra_ci
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: npm run check
+      - run: npm run db:check
+      - run: npm run export:android
+      - run: npm run export:ios

@@ -1,0 +1,36 @@
+{
+  "expo": {
+    "name": "Giba Quadra",
+    "slug": "giba-quadra",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "scheme": "gibaquadra",
+    "userInterfaceStyle": "light",
+    "icon": "./assets/icon.png",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.example.gibaquadra"
+    },
+    "android": {
+      "package": "com.example.gibaquadra"
+    },
+    "web": {
+      "output": "static"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#0F382A",
+          "image": "./assets/icon.png",
+          "imageWidth": 100
+        }
+      ],
+      "expo-status-bar"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
