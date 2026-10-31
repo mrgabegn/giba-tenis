@@ -9,7 +9,7 @@ export default function HomeScreen() {
       <ScrollView contentContainerStyle={styles.content}>
         <View style={styles.wordmark}>
           <View style={styles.dot} />
-          <Text style={styles.brand}>GIBA QUADRA</Text>
+          <Text style={styles.brand}>GIBA TÊNIS</Text>
         </View>
         <Text style={styles.eyebrow}>MAIS TEMPO EM QUADRA</Text>
         <Text style={styles.title}>Sua próxima{'\n'}partida começa aqui.</Text>
@@ -47,12 +47,41 @@ export default function HomeScreen() {
 }
 
 const styles = StyleSheet.create({
-  safe: { flex: 1, backgroundColor: colors.background },
-  content: { padding: 24, gap: 20, width: '100%', maxWidth: 620, alignSelf: 'center' },
-  wordmark: { flexDirection: 'row', alignItems: 'center', gap: 9, marginBottom: 20 },
-  dot: { width: 14, height: 14, borderRadius: 7, backgroundColor: colors.green },
-  brand: { color: colors.ink, fontWeight: '800', fontSize: 15, letterSpacing: 2 },
-  eyebrow: { color: colors.green, fontSize: 11, fontWeight: '700', letterSpacing: 2.2 },
+  safe: {
+    flex: 1,
+    backgroundColor: colors.background,
+  },
+  content: {
+    padding: 24,
+    gap: 20,
+    width: '100%',
+    maxWidth: 620,
+    alignSelf: 'center',
+  },
+  wordmark: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 9,
+    marginBottom: 20,
+  },
+  dot: {
+    width: 14,
+    height: 14,
+    borderRadius: 7,
+    backgroundColor: colors.green,
+  },
+  brand: {
+    color: colors.ink,
+    fontWeight: '800',
+    fontSize: 15,
+    letterSpacing: 2,
+  },
+  eyebrow: {
+    color: colors.green,
+    fontSize: 11,
+    fontWeight: '700',
+    letterSpacing: 2.2,
+  },
   title: {
     color: colors.ink,
     fontSize: 38,
@@ -60,8 +89,13 @@ const styles = StyleSheet.create({
     lineHeight: 44,
     letterSpacing: -1.4,
   },
-  subtitle: { color: colors.muted, fontSize: 16, lineHeight: 25 },
+  subtitle: {
+    color: colors.muted,
+    fontSize: 16,
+    lineHeight: 25,
+  },
   hero: {
+    position: 'relative',
     backgroundColor: colors.green,
     height: 256,
     borderRadius: 24,
@@ -100,19 +134,21 @@ const styles = StyleSheet.create({
   },
   centerLine: {
     position: 'absolute',
-    top: '23%',
-    bottom: '23%',
-    left: '50%',
-    width: 1.5,
-    backgroundColor: '#9FC3A9',
+    top: '50%',
+    left: '13%',
+    right: '13%',
+    height: 1,
+    backgroundColor: '#FFFFFF',
+    transform: [{ translateY: -0.5 }],
   },
   net: {
     position: 'absolute',
-    top: '50%',
-    left: -10,
-    right: -10,
-    height: 2,
+    top: -10,
+    bottom: -10,
+    left: '50%',
+    width: 2,
     backgroundColor: '#FFFFFF',
+    transform: [{ translateX: -1 }],
   },
   ball: {
     position: 'absolute',
@@ -140,8 +176,16 @@ const styles = StyleSheet.create({
     gap: 8,
     backgroundColor: colors.surface,
   },
-  noticeTitle: { color: colors.ink, fontWeight: '700', fontSize: 16 },
-  noticeText: { color: colors.muted, fontSize: 14, lineHeight: 22 },
+  noticeTitle: {
+    color: colors.ink,
+    fontWeight: '700',
+    fontSize: 16,
+  },
+  noticeText: {
+    color: colors.muted,
+    fontSize: 14,
+    lineHeight: 22,
+  },
   devLink: {
     color: colors.green,
     paddingVertical: 12,

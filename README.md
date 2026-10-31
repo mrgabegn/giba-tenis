@@ -1,4 +1,4 @@
-# Giba Quadra — estrutura técnica
+# Giba Tênis — estrutura técnica
 
 Base de um aplicativo de agendamento para uma quadra de tênis. Nome, identidade visual e identificadores são provisórios.
 
