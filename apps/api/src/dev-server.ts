@@ -1,6 +1,7 @@
 import { createServer } from 'node:http';
 import health from '../api/health.ts';
 import readiness from '../api/readiness.ts';
+import availability from '../api/availability.ts';
 import { closeDatabase } from './mongodb.ts';
 import { jsonResponse } from './http.ts';
 
@@ -22,7 +23,9 @@ const server = createServer(async (incoming, outgoing) => {
         ? health.fetch(request)
         : url.pathname === '/api/readiness'
           ? await readiness.fetch(request)
-          : jsonResponse({ error: 'not_found' }, 404);
+          : url.pathname === '/api/availability'
+            ? await availability.fetch(request)
+            : jsonResponse({ error: 'not_found' }, 404);
     outgoing.writeHead(response.status, Object.fromEntries(response.headers));
     outgoing.end(Buffer.from(await response.arrayBuffer()));
   } catch {

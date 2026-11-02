@@ -1,3 +1,5 @@
+export * from './calendar';
+
 export type HealthResponse = {
   status: 'ok';
   service: 'giba-quadra-api';

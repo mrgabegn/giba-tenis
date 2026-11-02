@@ -5,3 +5,4 @@ package-lock.json
 dist
 coverage
 assets
+**/expo-env.d.ts

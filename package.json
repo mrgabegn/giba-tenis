@@ -20,6 +20,8 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "db:check": "npm run db:check --workspace @giba-quadra/api",
+    "calendar:configure": "npm run calendar:configure --workspace @giba-quadra/api --",
+    "calendar:access": "npm run calendar:access --workspace @giba-quadra/api --",
     "export:android": "npm run export:android --workspace @giba-quadra/mobile",
     "export:ios": "npm run export:ios --workspace @giba-quadra/mobile"
   },

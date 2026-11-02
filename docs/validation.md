@@ -24,3 +24,17 @@ Os testes automatizados cobrem autorização antes do acesso ao banco, falhas se
 - Atlas, Vercel e EAS: nenhum serviço remoto foi provisionado ou publicado. A CI foi escrita, mas ainda não executada no GitHub.
 
 Não há gateway de pagamento, autenticação de clientes ou dados reais de usuários integrados nesta etapa.
+
+## Calendário — validação de 02/11/2026
+
+Esta atualização acrescenta o calendário e supera as pendências de MongoDB local e interface web registradas na entrega inicial acima. Ambiente: Node.js 24.22.1 e npm 11.9.0.
+
+| Verificação                    | Resultado                                                                                                                                                                                   |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `npm run check`                | TypeScript nos três workspaces, 32 testes aprovados sem skips com `CALENDAR_TEST_MONGODB_URI` e Prettier aprovado                                                                           |
+| MongoDB 8.0.17 temporário      | Publicação, importação idempotente, índices, emissão de acesso, hash, expiração, revogação, perfis e privacidade validados contra o banco real                                              |
+| Expo Web com API e banco reais | Seleção de simples/duplas, fechamento, navegação mensal, atualização, nova ocupação antes da seleção, grade explícita, falha de rede com nova tentativa e visibilidade por perfil aprovados |
+| Layout no navegador            | Conferido em larguras de 320, 390 e 1440 pixels, sem rolagem horizontal nem erros de execução no navegador                                                                                  |
+| Android e iOS                  | Bundles Metro/Hermes e assets exportados; execução nativa em aparelhos/emuladores permanece pendente                                                                                        |
+
+As verificações usam apenas dados e códigos de acesso de teste. Nenhum banco do usuário, Atlas, Vercel ou EAS foi alterado. A efetivação concorrente de reservas e o login definitivo ainda não fazem parte deste fluxo de seleção.
