@@ -12,7 +12,7 @@ Base de um aplicativo de agendamento para uma quadra de tênis. Nome, identidade
 
 O aplicativo usa o Expo SDK 58 e requer uma versão do Expo Go compatível com esse SDK no celular. O lockfile fixa as versões efetivamente instaladas. Não atualize a versão de React Native isoladamente; use as ferramentas do Expo ao atualizar o SDK.
 
-O escopo desta entrega é a fundação técnica. Login, agenda, reservas e pagamentos serão implementados nos próximos milestones. Regras do PO não foram presumidas.
+O projeto inclui a fundação técnica e o calendário com seleção de dia e horário, disponibilidade configurável, durações de simples/duplas e consulta de ocupações com acesso restrito. Veja [como publicar a agenda e emitir acesso aos sócios](docs/calendar.md). A seleção ainda não efetiva reservas. Login definitivo e o fluxo de reservas seguem nos próximos milestones; pagamentos ficam para a segunda fase.
 
 ## Executar no Windows
 

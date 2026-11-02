@@ -15,6 +15,7 @@ export default function RootLayout() {
         }}
       >
         <Stack.Screen name="index" options={{ headerShown: false }} />
+        <Stack.Screen name="agenda" options={{ title: 'Calendário da quadra' }} />
         <Stack.Screen name="diagnostico" options={{ title: 'Conexão de desenvolvimento' }} />
       </Stack>
     </>

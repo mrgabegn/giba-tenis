@@ -9,7 +9,8 @@ permissions:
 
 jobs:
   validate:
-    runs-on: ubuntu-latest
+    # MongoDB 8.0 não inicia no kernel atual de ubuntu-latest (SERVER-121912).
+    runs-on: ubuntu-22.04
     timeout-minutes: 15
     services:
       mongodb:
@@ -26,6 +27,7 @@ jobs:
       EXPO_NO_TELEMETRY: '1'
       MONGODB_URI: mongodb://127.0.0.1:27017
       MONGODB_DATABASE: giba_quadra_ci
+      CALENDAR_TEST_MONGODB_URI: mongodb://127.0.0.1:27017
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-node@v7

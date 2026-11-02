@@ -9,7 +9,9 @@
   "scripts": {
     "dev": "node --env-file-if-exists=.env --import tsx --watch src/dev-server.ts",
     "typecheck": "tsc --noEmit",
-    "test": "node --import tsx --test tests/platform.test.ts",
+    "test": "node --import tsx --test tests/*.test.ts",
+    "calendar:configure": "node --env-file-if-exists=.env --import tsx scripts/configure-calendar.ts",
+    "calendar:access": "node --env-file-if-exists=.env --import tsx scripts/create-calendar-access.ts",
     "db:check": "node --env-file-if-exists=.env --import tsx scripts/check-database.ts"
   },
   "dependencies": {

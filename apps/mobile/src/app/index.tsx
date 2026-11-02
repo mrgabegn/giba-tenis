@@ -1,5 +1,5 @@
 import { Link } from 'expo-router';
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { colors } from '../theme';
 
@@ -31,10 +31,15 @@ export default function HomeScreen() {
           <Text style={styles.heroLabel}>NOS VEMOS NA QUADRA.</Text>
         </View>
         <View style={styles.notice}>
-          <Text style={styles.noticeTitle}>Estamos preparando a agenda</Text>
+          <Text style={styles.noticeTitle}>Encontre seu próximo horário</Text>
           <Text style={styles.noticeText}>
-            Os horários e as reservas estarão disponíveis em uma próxima versão.
+            Consulte os dias liberados e escolha um horário para simples ou duplas.
           </Text>
+          <Link href="/agenda" asChild>
+            <Pressable accessibilityRole="button" style={styles.calendarButton}>
+              <Text style={styles.calendarButtonText}>Escolher dia e horário →</Text>
+            </Pressable>
+          </Link>
         </View>
         {__DEV__ && (
           <Link href="/diagnostico" style={styles.devLink}>
@@ -142,6 +147,16 @@ const styles = StyleSheet.create({
   },
   noticeTitle: { color: colors.ink, fontWeight: '700', fontSize: 16 },
   noticeText: { color: colors.muted, fontSize: 14, lineHeight: 22 },
+  calendarButton: {
+    backgroundColor: colors.green,
+    padding: 16,
+    borderRadius: 12,
+    minHeight: 50,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 8,
+  },
+  calendarButtonText: { color: colors.surface, fontWeight: '700', fontSize: 14 },
   devLink: {
     color: colors.green,
     paddingVertical: 12,
