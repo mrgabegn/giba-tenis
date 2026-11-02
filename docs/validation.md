@@ -38,3 +38,5 @@ Esta atualização acrescenta o calendário e supera as pendências de MongoDB l
 | Android e iOS                  | Bundles Metro/Hermes e assets exportados; execução nativa em aparelhos/emuladores permanece pendente                                                                                        |
 
 As verificações usam apenas dados e códigos de acesso de teste. Nenhum banco do usuário, Atlas, Vercel ou EAS foi alterado. A efetivação concorrente de reservas e o login definitivo ainda não fazem parte deste fluxo de seleção.
+
+A primeira execução no GitHub parou antes dos testes porque o MongoDB 8.0 recusou o kernel da nova imagem `ubuntu-latest` ([SERVER-121912](https://jira.mongodb.org/browse/SERVER-121912)). A CI usa temporariamente `ubuntu-22.04`, com kernel compatível, mantendo MongoDB 8.0 e todos os checks obrigatórios. Essa imagem precisa ser substituída antes da [retirada em 17/04/2027](https://github.com/actions/runner-images/issues/14254), após validar a correção do MongoDB para os kernels das imagens recentes.
